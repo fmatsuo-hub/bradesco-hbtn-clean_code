@@ -25,7 +25,9 @@ public class Functions {
         return userRepository.save(user);
     }
     public void setRole(User user){
-        user.setRole(user);     
+        if(user.isAdmin){
+            user.setRole(user);
+        }
     }
 
     // Evite duplicados, extraindo para novos métodos
